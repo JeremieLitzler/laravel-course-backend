@@ -23,9 +23,12 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
+                // handle the requests from the frontend to get 
+                // the json response
                 if ($request->expectsJson()) {
                     return response()->json([], 200);
                 }
+                // ... instead a redirectiong (that would be applicable for server rendered pages)
                 return redirect(RouteServiceProvider::HOME);
             }
         }

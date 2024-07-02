@@ -72,6 +72,8 @@ return [
     | that it registers with the application. If necessary, you may change
     | subdomain under which all of the Fortify routes will be available.
     |
+    | Allows to register all the API routes to be configured in config/cors.php
+    |
     */
 
     'prefix' => 'api',
